@@ -1,6 +1,6 @@
 import 'package:airplane_app/shared/theme.dart';
-import 'package:airplane_app/ui/widgets/custom_destination_card_widget.dart';
-import 'package:airplane_app/ui/widgets/custom_destination_tile.dart';
+import 'package:airplane_app/ui/widgets/destination_card_widget.dart';
+import 'package:airplane_app/ui/widgets/destination_tile.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {

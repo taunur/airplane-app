@@ -1,4 +1,5 @@
 import 'package:airplane_app/shared/theme.dart';
+import 'package:airplane_app/ui/pages/choose_seat_page.dart';
 import 'package:airplane_app/ui/widgets/custom_button_widget.dart';
 import 'package:airplane_app/ui/widgets/interest_item_widget.dart';
 import 'package:airplane_app/ui/widgets/photo_item_widget.dart';
@@ -227,9 +228,8 @@ class DetailPage extends StatelessWidget {
                       ),
                       Text(
                         "per orang",
-                        style: blackTextStyle.copyWith(
+                        style: greyTextStyle.copyWith(
                           fontWeight: light,
-                          color: kGreyColor,
                         ),
                       ),
                     ],
@@ -238,7 +238,14 @@ class DetailPage extends StatelessWidget {
                   /// NOTE: BOOK BUTTON
                   CustomButton(
                     title: "Book Now",
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ChooseSeatPage(),
+                        ),
+                      );
+                    },
                     width: 170, // Set a specific width for the button
                   )
                 ],

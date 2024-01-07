@@ -1,6 +1,6 @@
 import 'package:airplane_app/shared/theme.dart';
-import 'package:airplane_app/ui/widgets/custom_button_widget.dart';
-import 'package:airplane_app/ui/widgets/custom_text_input_widget.dart';
+import 'package:airplane_app/ui/widgets/custom_button.dart';
+import 'package:airplane_app/ui/widgets/custom_text_input.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatelessWidget {

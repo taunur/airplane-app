@@ -1,19 +1,14 @@
+import 'package:airplane_app/models/destination_model.dart';
 import 'package:airplane_app/shared/theme.dart';
 import 'package:airplane_app/ui/pages/detail_page.dart';
 import 'package:flutter/material.dart';
 
 class DestinationCard extends StatelessWidget {
-  final String name;
-  final String city;
-  final String imgUrl;
-  final double rating;
+  final DestinationModel destination;
 
-  const DestinationCard({
+  const DestinationCard(
+    this.destination, {
     super.key,
-    required this.name,
-    required this.city,
-    required this.imgUrl,
-    this.rating = 0,
   });
 
   @override
@@ -46,7 +41,7 @@ class DestinationCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(defaultRadius),
                 image: DecorationImage(
-                  image: AssetImage(imgUrl),
+                  image: NetworkImage(destination.imageUrl),
                 ),
               ),
               child: Align(
@@ -75,7 +70,7 @@ class DestinationCard extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        rating.toString(),
+                        destination.rating.toString(),
                         style: blackTextStyle.copyWith(
                           fontWeight: medium,
                         ),
@@ -91,7 +86,7 @@ class DestinationCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    name,
+                    destination.name,
                     style: blackTextStyle.copyWith(
                       fontWeight: medium,
                       fontSize: 18,
@@ -101,7 +96,7 @@ class DestinationCard extends StatelessWidget {
                     height: 5,
                   ),
                   Text(
-                    city,
+                    destination.city,
                     style: greyTextStyle.copyWith(
                       fontWeight: light,
                     ),

@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:airplane_app/cubit/auth_cubit.dart';
 import 'package:airplane_app/shared/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -23,6 +25,7 @@ class _SplashPageState extends State<SplashPage> {
               context, '/get-started', (route) => false);
         } else {
           debugPrint("email: ${user.email}");
+          context.read<AuthCubit>().getCurrentUser(user.uid);
           Navigator.pushNamedAndRemoveUntil(context, '/main', (route) => false);
         }
       },
